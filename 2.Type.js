@@ -22,7 +22,7 @@ They are one of the 6 primary types (called "language types" in the specificatio
 
 /**************************
  **** BUILT-IN OBJECTS ****
-**************************/
+ *************************/
 
 /* Other object sub-types
 * String
@@ -101,5 +101,5 @@ But only use constructed form if you need the extra options
 But go for it
 */
 
-const jakesMistake = new Error()
-console.log('typeof jakesMistake: ', typeof jakesMistake);
+const jakesMistake = new Error();
+console.log("typeof jakesMistake: ", typeof jakesMistake);
