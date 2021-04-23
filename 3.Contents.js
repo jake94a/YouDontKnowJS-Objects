@@ -10,13 +10,13 @@ What is stored in the container are these property names, which act as pointers 
 
 // ~~~~ BEGIN EXAMPLE 1 ~~~~
 
-var myObject = {
-  a: 2,
-};
+// var myObject = {
+//   a: 2,
+// };
 
-// What will log in the console?
-console.log("myObject.a: ", myObject.a);
-console.log('myObject["a"]: ', myObject["a"]);
+// // What will log in the console?
+// console.log("myObject.a: ", myObject.a);
+// console.log('myObject["a"]: ', myObject["a"]);
 
 // ~~~~ END EXAMPLE 1 ~~~~
 
@@ -29,32 +29,34 @@ We continue with the term "property access" from here on
 
 //Dot notation requires an `Identifier`
 
-// ~~~~ BEGIN EXAMPLE 2A ~~~~
-
 /*
 When to not use dot notation
 */
-var anObject = {
-  "Super-Fun!": "Hello",
-};
-// bad
-//console.log("anObject.Super-Fun!: ", anObject.Super-Fun!);
-// good
-console.log('anObject["Super-Fun!"]: ', anObject["Super-Fun!"]);
+
+// ~~~~ BEGIN EXAMPLE 2A ~~~~
+
+// var anObject = {
+//   "Super-Fun!": "Hello",
+// };
+// // bad
+// //console.log("anObject.Super-Fun!: ", anObject.Super-Fun!);
+// // good
+// console.log('anObject["Super-Fun!"]: ', anObject["Super-Fun!"]);
 
 // ~~~~ END EXAMPLE 2A ~~~~
-
-// ~~~~ BEGIN EXAMPLE 2B ~~~~
 
 /*
 A way to use bracket notation
 The program can build of the value of the string
 */
-var theObject = {
-  a: 2,
-};
-var idx = "a";
-console.log("theObject[idx]: ", theObject[idx]);
+
+// ~~~~ BEGIN EXAMPLE 2B ~~~~
+
+// var theObject = {
+//   a: 2,
+// };
+// var idx = "a";
+// console.log("theObject[idx]: ", theObject[idx]);
 
 // ~~~~ END EXAMPLE 2B ~~~~
 
@@ -65,15 +67,16 @@ Other primitive types will be converted to `string`
 
 // ~~~~ BEGIN EXAMPLE 3 ~~~~
 
-var myObject = {};
+// var myObject = {};
 
-myObject[true] = "foo";
-myObject[3] = "bar";
-myObject[myObject] = "baz";
+// myObject[true] = "foo";
+// myObject[3] = "bar";
+// myObject[myObject] = "baz";
 
-console.log('myObject["true"]: ', myObject["true"]); // "foo"
-console.log('myObject["3"]: ', myObject["3"]); // "bar"
-console.log('myObject["[object Object]"]: ', myObject["[object Object]"]); // "baz"
+// // what will log?!
+// console.log('myObject["true"]: ', myObject["true"]);
+// console.log('myObject["3"]: ', myObject["3"]);
+// console.log('myObject["[object Object]"]: ', myObject["[object Object]"]);
 
 // ~~~~ END EXAMPLE 3 ~~~~
 
@@ -85,16 +88,16 @@ console.log('myObject["[object Object]"]: ', myObject["[object Object]"]); // "b
 
 // ~~~~ BEGIN EXAMPLE 4 ~~~~
 
-var prefix = "foo";
+// var prefix = "foo";
 
-var myObject = {
-  [prefix + "bar"]: "hello",
-  [prefix + "baz"]: "world",
-};
+// var myObject = {
+//   [prefix + "bar"]: "hello",
+//   [prefix + "baz"]: "world",
+// };
 
-// Guess the expected output
-console.log('myObject["foobar"]: ', myObject["foobar"]);
-console.log('myObject["foobaz"]: ', myObject["foobaz"]);
+// // Guess the expected output
+// console.log('myObject["foobar"]: ', myObject["foobar"]);
+// console.log('myObject["foobaz"]: ', myObject["foobaz"]);
 
 // ~~~~ END EXAMPLE 4 ~~~~
 
@@ -119,23 +122,23 @@ Accessing a property on an object is "property access" (gasp)
 
 // ~~~~ BEGIN EXAMPLE 5 ~~~~
 
-function foo() {
-  console.log("foo");
-}
+// function foo() {
+//   console.log("foo");
+// }
 
-var someFoo = foo; // variable reference to `foo`
+// var someFoo = foo; // variable reference to `foo`
 
-var myObject = {
-  someFoo: foo,
-};
+// var myObject = {
+//   someFoo: foo,
+// };
 
-/*
- * What will log out?
- * is there something on `foo`, `someFoo`, or `myObject.someFoo` implying it is "owned" by another object?
- */
-console.log("foo: ", foo);
-console.log("someFoo: ", someFoo);
-console.log("myObject.someFoo: ", myObject.someFoo);
+// /*
+//  * What will log out?
+//  * is there something on `foo`, `someFoo`, or `myObject.someFoo` implying it is "owned" by another object?
+//  */
+// console.log("foo: ", foo);
+// console.log("someFoo: ", someFoo);
+// console.log("myObject.someFoo: ", myObject.someFoo);
 
 // ~~~~ END EXAMPLE 5 ~~~~
 
@@ -147,17 +150,17 @@ BONUS ROUND
 
 // ~~~~ BEGIN BONUS EXAMPLE ~~~~
 
-var myObject = {
-  foo: function foo() {
-    console.log("foo");
-  },
-};
+// var myObject = {
+//   foo: function foo() {
+//     console.log("foo");
+//   },
+// };
 
-var someFoo = myObject.foo;
+// var someFoo = myObject.foo;
 
-//references to the same object
-console.log("someFoo: ", someFoo);
-console.log("myObject.foo: ", myObject.foo);
+// //references to the same object
+// console.log("someFoo: ", someFoo);
+// console.log("myObject.foo: ", myObject.foo);
 
 // ~~~~ END BONUS EXAMPLE ~~~~
 
@@ -169,12 +172,12 @@ console.log("myObject.foo: ", myObject.foo);
 
 // ~~~~ BEGIN EXAMPLE 6 ~~~~
 
-var myArray = ["foo", 42, "bar"];
-// what will log in the console?
-// is `length` 2 or 3?
-console.log("myArray.length: ", myArray.length);
-console.log("myArray[0]: ", myArray[0]);
-console.log("myArray[2]: ", myArray[2]);
+// var myArray = ["foo", 42, "bar"];
+// // what will log in the console?
+// // is `length` 2 or 3?
+// console.log("myArray.length: ", myArray.length);
+// console.log("myArray[0]: ", myArray[0]);
+// console.log("myArray[2]: ", myArray[2]);
 
 // ~~~~ END EXAMPLE 6 ~~~~
 
@@ -185,12 +188,12 @@ console.log("myArray[2]: ", myArray[2]);
 
 // ~~~~ BEGIN EXAMPLE 7 ~~~~
 
-var myArray = ["foo", 42, "bar"];
-myArray.baz = "baz";
+// var myArray = ["foo", 42, "bar"];
+// myArray.baz = "baz";
 
-// What will `lenght` output?
-console.log("myArray.length: ", myArray.length);
-console.log("myArray.baz: ", myArray.baz);
+// // What will `lenght` output?
+// console.log("myArray.length: ", myArray.length);
+// console.log("myArray.baz: ", myArray.baz);
 
 // ~~~~ END EXAMPLE 7 ~~~~
 
@@ -201,11 +204,11 @@ console.log("myArray.baz: ", myArray.baz);
 
 // ~~~~ BEGIN EXAMPLE 8 ~~~~
 
-var myArray = ["foo", 42, "bar"];
-myArray["3"] = "baz";
-console.log("myArray.length: ", myArray.length);
-console.log("myArray[3]: ", myArray[3]);
-console.log('myArray["3"]: ', myArray["3"]);
+// var myArray = ["foo", 42, "bar"];
+// myArray["3"] = "baz";
+// console.log("myArray.length: ", myArray.length);
+// console.log("myArray[3]: ", myArray[3]);
+// console.log('myArray["3"]: ', myArray["3"]);
 
 // ~~~~ END EXAMPLE 8 ~~~~
 
@@ -217,24 +220,24 @@ console.log('myArray["3"]: ', myArray["3"]);
 
 // ~~~~ BEGIN EXAMPLE 9 ~~~~
 
-function anotherFunction() {
-  /*..*/
-}
+// function anotherFunction() {
+//   /*..*/
+// }
 
-var anotherObject = {
-  c: true,
-};
+// var anotherObject = {
+//   c: true,
+// };
 
-var anotherArray = [];
+// var anotherArray = [];
 
-var myObject = {
-  a: 2,
-  b: anotherObject, // reference, not a copy!
-  c: anotherArray, // another reference!
-  d: anotherFunction,
-};
+// var myObject = {
+//   a: 2,
+//   b: anotherObject, // reference, not a copy!
+//   c: anotherArray, // another reference!
+//   d: anotherFunction,
+// };
 
-anotherArray.push(anotherObject, myObject);
+// anotherArray.push(anotherObject, myObject);
 
 // What should be the representation of a copy of `myObject`?
 
@@ -259,9 +262,9 @@ object with the same structure and values?
 */
 // ~~~~ BEGIN EXAMPLE 10 ~~~~
 
-var someObj = { a: 1, b: 2 };
-var newObj = JSON.parse(JSON.stringify(someObj));
-console.log("newObj: ", newObj);
+// var someObj = { a: 1, b: 2 };
+// var newObj = JSON.parse(JSON.stringify(someObj));
+// console.log("newObj: ", newObj);
 
 // ~~~~ END EXAMPLE 10 ~~~~
 
@@ -273,14 +276,15 @@ ES6 introduces `Object.assign(`target`, `source`)`
 */
 
 // ~~~~ BEGIN EXAMPLE 9A ~~~~
+// uncomment example 9 ya dummy
 
-var newObj = Object.assign({}, myObject);
-console.log("newObj: ", newObj);
+// var newObj = Object.assign({}, myObject);
+// console.log("newObj: ", newObj);
 
-newObj.a; // 2
-newObj.b === anotherObject; // true
-newObj.c === anotherArray; // true
-newObj.d === anotherFunction; // true
+// newObj.a; // 2
+// newObj.b === anotherObject; // true
+// newObj.c === anotherArray; // true
+// newObj.d === anotherFunction; // true
 
 // newObj.c[1].c is `Circular`. What does that mean?
 
@@ -294,17 +298,17 @@ newObj.d === anotherFunction; // true
 
 // ~~~~ BEGIN EXAMPLE 11 ~~~~
 
-var myObject = {
-  a: 2,
-};
+// var myObject = {
+//   a: 2,
+// };
 
-console.log(Object.getOwnPropertyDescriptor(myObject, "a"));
-// {
-//    value: 2,
-//    writable: true,
-//    enumerable: true,
-//    configurable: true
-// }
+// console.log(Object.getOwnPropertyDescriptor(myObject, "a"));
+// // {
+// //    value: 2,
+// //    writable: true,
+// //    enumerable: true,
+// //    configurable: true
+// // }
 
 // ~~~~ END EXAMPLE 11 ~~~~
 
@@ -312,17 +316,17 @@ console.log(Object.getOwnPropertyDescriptor(myObject, "a"));
 
 // ~~~~ BEGIN EXAMPLE 12 ~~~~
 
-var myObject = {};
+// var myObject = {};
 
-Object.defineProperty(myObject, "a", {
-  value: 2,
-  writable: true,
-  configurable: true,
-  enumerable: true,
-});
+// Object.defineProperty(myObject, "a", {
+//   value: 2,
+//   writable: true,
+//   configurable: true,
+//   enumerable: true,
+// });
 
-// What will log to the console?
-console.log("myObject.a: ", myObject.a);
+// // What will log to the console?
+// console.log("myObject.a: ", myObject.a);
 
 // ~~~~ END EXAMPLE 12 ~~~~
 
@@ -332,19 +336,19 @@ console.log("myObject.a: ", myObject.a);
 
 // ~~~~ BEGIN EXAMPLE 13 ~~~~
 
-var myObject = {};
+// var myObject = {};
 
-Object.defineProperty(myObject, "a", {
-  value: 2,
-  writable: false, // not writable!
-  configurable: true,
-  enumerable: true,
-});
+// Object.defineProperty(myObject, "a", {
+//   value: 2,
+//   writable: false, // not writable!
+//   configurable: true,
+//   enumerable: true,
+// });
 
-myObject.a = 3;
+// myObject.a = 3;
 
-// What will log to the console?
-console.log("myObject.a: ", myObject.a);
+// // What will log to the console?
+// console.log("myObject.a: ", myObject.a);
 
 // ~~~~ END EXAMPLE 13 ~~~~
 
@@ -353,20 +357,20 @@ console.log("myObject.a: ", myObject.a);
 
 // ~~~~ BEGIN EXAMPLE 14 ~~~~
 
-("use strict");
+// ("use strict");
 
-var myObject = {};
+// var myObject = {};
 
-Object.defineProperty(myObject, "a", {
-  value: 2,
-  writable: false, // not writable!
-  configurable: true,
-  enumerable: true,
-});
+// Object.defineProperty(myObject, "a", {
+//   value: 2,
+//   writable: false, // not writable!
+//   configurable: true,
+//   enumerable: true,
+// });
 
-myObject.a = 3; // TypeError
+// myObject.a = 3; // TypeError
 
-// ¯\_(ツ)_/¯
+// // ¯\_(ツ)_/¯
 
 // ~~~~ END EXAMPLE 14 ~~~~
 
@@ -376,32 +380,32 @@ myObject.a = 3; // TypeError
 
 // ~~~~ BEGIN EXAMPLE 15 ~~~~
 
-var myObject = {
-  a: 2,
-};
+// var myObject = {
+//   a: 2,
+// };
 
-myObject.a = 3;
-myObject.a;
+// myObject.a = 3;
+// myObject.a;
 
-Object.defineProperty(myObject, "a", {
-  value: 4,
-  writable: true,
-  configurable: false, // not configurable!
-  enumerable: true,
-});
+// Object.defineProperty(myObject, "a", {
+//   value: 4,
+//   writable: true,
+//   configurable: false, // not configurable!
+//   enumerable: true,
+// });
 
-myObject.a; // 4
-myObject.a = 5;
-myObject.a; // 5
+// myObject.a; // 4
+// myObject.a = 5;
+// myObject.a; // 5
 
-Object.defineProperty(myObject, "a", {
-  //   value: 6,
-  //   writable: true,
-  //   configurable: true,
-  //   enumerable: true,
-}); // TypeError
+// Object.defineProperty(myObject, "a", {
+//   //   value: 6,
+//   //   writable: true,
+//   //   configurable: true,
+//   //   enumerable: true,
+// }); // TypeError
 
-// butwhy.gif
+// // butwhy.gif
 
 // ~~~~ END EXAMPLE 15 ~~~~
 
@@ -409,24 +413,24 @@ Object.defineProperty(myObject, "a", {
 
 // ~~~~ BEGIN EXAMPLE 16 ~~~~
 
-var myObject = {
-  a: 2,
-};
+// var myObject = {
+//   a: 2,
+// };
 
-console.log("myObject.a: ", myObject.a);
-delete myObject.a;
-console.log("myObject.a: ", myObject.a);
+// console.log("myObject.a: ", myObject.a);
+// delete myObject.a;
+// console.log("myObject.a: ", myObject.a);
 
-Object.defineProperty(myObject, "a", {
-  value: 2,
-  writable: true,
-  configurable: false,
-  enumerable: true,
-});
+// Object.defineProperty(myObject, "a", {
+//   value: 2,
+//   writable: true,
+//   configurable: false,
+//   enumerable: true,
+// });
 
-console.log("myObject.a: ", myObject.a);
-delete myObject.a;
-console.log("myObject.a: ", myObject.a);
+// console.log("myObject.a: ", myObject.a);
+// delete myObject.a;
+// console.log("myObject.a: ", myObject.a);
 
 // ~~~~ END EXAMPLE 16 ~~~~
 
@@ -455,15 +459,15 @@ What is the difference between writable and configurable?
 
 // make this actually immutable
 
-const myImmutableObject = {
-  foo: [1, 2, 3],
-  bar: "some other stuff",
-};
+// const myImmutableObject = {
+//   foo: [1, 2, 3],
+//   bar: "some other stuff",
+// };
 
-myImmutableObject.foo.push(4);
-myImmutableObject.foo;
+// myImmutableObject.foo.push(4);
+// myImmutableObject.foo;
 
-console.log("myImmutableObject: ", myImmutableObject);
+// console.log("myImmutableObject: ", myImmutableObject);
 
 // ~~~~ END EXAMPLE 17 ~~~~
 
@@ -474,13 +478,13 @@ console.log("myImmutableObject: ", myImmutableObject);
 // combine `writable: false` and `configurable: false`
 // ~~~~ BEGIN EXAMPLE 18 ~~~~
 
-var myObject = {};
+// var myObject = {};
 
-Object.defineProperty(myObject, "FAVORITE_NUMBER", {
-  value: 42,
-  writable: false,
-  configurable: false,
-});
+// Object.defineProperty(myObject, "FAVORITE_NUMBER", {
+//   value: 42,
+//   writable: false,
+//   configurable: false,
+// });
 
 // ~~~~ END EXAMPLE 18 ~~~~
 
@@ -490,16 +494,16 @@ Object.defineProperty(myObject, "FAVORITE_NUMBER", {
 
 // ~~~~ BEGIN EXAMPLE 19 ~~~~
 
-var myObject = {
-  a: 2,
-};
+// var myObject = {
+//   a: 2,
+// };
 
-Object.preventExtensions(myObject);
+// Object.preventExtensions(myObject);
 
-myObject.b = 3;
+// myObject.b = 3;
 
-// What will log for `myObject.b`?
-console.log("myObject.b: ", myObject.b);
+// // What will log for `myObject.b`?
+// console.log("myObject.b: ", myObject.b);
 
 // ~~~~ END EXAMPLE 19 ~~~~
 
@@ -509,37 +513,303 @@ console.log("myObject.b: ", myObject.b);
 
 // ~~~~ BEGIN EXAMPLE 20 ~~~~
 
-const jakesObject = {
-  foo: "hello",
-  bar: "there",
-};
+// const jakesObject = {
+//   foo: "hello",
+//   bar: "there",
+// };
 
-Object.seal(jakesObject);
+// Object.seal(jakesObject);
 
-jakesObject.baz = "general kenobi";
+// jakesObject.baz = "general kenobi";
 
-// What will log to the console?
-console.log('jakesObject: ', jakesObject);
+// // What will log to the console?
+// console.log("jakesObject: ", jakesObject);
 
 // ~~~~ END EXAMPLE 20 ~~~~
 
+// Is it "WRITABLE" though?
+
 // ~~~~ BEGIN EXAMPLE 21 ~~~~
 
-const jakesObject = {
-    foo: "hello",
-    bar: "there",
-  };
-  
-  Object.seal(jakesObject);
-  
-  jakesObject.bar = "goodbye";
-  
-  // What will log to the console?
-  console.log('jakesObject: ', jakesObject);
-  
-  // ~~~~ END EXAMPLE 21 ~~~~
+// const jakesObject = {
+//   foo: "hello",
+//   bar: "there",
+// };
+
+// Object.seal(jakesObject);
+
+// jakesObject.bar = "goodbye";
+
+// // What will log to the console?
+// console.log("jakesObject: ", jakesObject);
+
+// ~~~~ END EXAMPLE 21 ~~~~
 
 /*
  **** FREEZE: Essentially calls Object.seal && sets `writable:false` ****
  */
 
+// ~~~~ BEGIN EXAMPLE 22 ~~~~
+
+// const jakesObject = {
+//   foo: "get",
+//   bar: "lost",
+// };
+
+// Object.freeze(jakesObject);
+
+// jakesObject.baz = "creep";
+
+// // What will log to the console?
+// console.log("jakesObject: ", jakesObject);
+
+// ~~~~ END EXAMPLE 22 ~~~~
+
+// ~~~~ BEGIN EXAMPLE 23 ~~~~
+
+// const jakesObject = {
+//     foo: "get",
+//     bar: "lost",
+//   };
+
+//   Object.freeze(jakesObject);
+
+//   jakesObject.bar = "bent";
+
+//   // What will log to the console?
+//   console.log("jakesObject: ", jakesObject);
+
+// ~~~~ END EXAMPLE 23 ~~~~
+
+/*****************
+ **** [[GET]] ****
+ ****************/
+
+/*
+ * property accessing is actually a [[Get]] operation
+ * inspect the object for a request property name
+ * if found, return associated value
+ * if not found, return `undefined`
+
+ * this is different from typical variable references
+ * if a variable is referenced but not found, a `ReferenceError` is thrown
+ */
+
+// ~~~~ BEGIN EXAMPLE 24 ~~~~
+
+// var myObject = {
+//   a: 2,
+//   foo: undefined,
+// };
+
+// // Which reference probably does the most work?
+// console.log("myObject.a: ", myObject.a);
+// console.log("myObject.b: ", myObject.b);
+// console.log("myObject.foo: ", myObject.foo);
+
+// ~~~~ END EXAMPLE 24 ~~~~
+
+/*****************
+ **** [[PUT]] ****
+ ****************/
+
+/*
+ * [[Put]] depends on on a number of factors
+ * Is the property an accessor descriptor? If so, call the setter (see next)
+ * is `writable: false`? if so, FAIL
+ * else, set value to the existing property as normal
+ */
+
+/***************************
+ **** GETTERS & SETTERS ****
+ **************************/
+
+/*
+[[Put]] and [[Get]] completely control how values are set or retrieved
+*/
+
+/*
+ **** GETTERS: Call a hidden function to retrieve a value ****
+ */
+
+/*
+ **** SETTERS: Call a hidden function to set a value ****
+ */
+
+// ~~~~ BEGIN EXAMPLE 25 ~~~~
+
+// // object-literal syntax
+// var myObject = {
+//   // define a getter for `a`
+//   get a() {
+//     return 2;
+//   },
+// };
+
+// // explicit definition
+// Object.defineProperty(
+//   myObject, // target
+//   "b", // property name
+//   {
+//     // descriptor; define a getter for `b`
+//     get: function () {
+//       console.log("this: ", this);
+//       return this.a * 2;
+//     },
+
+//     // make sure `b` shows up as an object property
+//     enumerable: true,
+//   }
+// );
+
+// console.log("myObject.a: ", myObject.a);
+// console.log("myObject.b: ", myObject.b);
+
+// ~~~~ END EXAMPLE 25 ~~~~
+
+// accessing `a` or `b` results in a hidden function call to a getter
+
+// ~~~~ BEGIN EXAMPLE 26 ~~~~
+
+// var myObject = {
+// 	// define a getter for `a`
+// 	get a() {
+// 		return 2;
+// 	}
+// };
+
+// myObject.a = 3;
+
+// // What will be logged?
+// console.log('myObject.a: ', myObject.a);
+
+// ~~~~ END EXAMPLE 26 ~~~~
+
+/*
+Since we only defined a getter for `a`, if we try to set the value of `a` later,
+the set operation won't throw an error but will just silently throw the 
+assignment away. Even if there was a valid setter, our custom getter is hard-
+coded to return only 2, so the set operation would be moot.
+*/
+
+// BEST PRACTICE: IF YOU DEFINE A GETTER, DEFINE A SETTER. AND VICE VERSA
+
+// ~~~~ BEGIN EXAMPLE 27 ~~~~
+
+// var myObject = {
+//   // define a getter for `a`
+//   // _a_ named is by convention and is just a normal property
+//   get a() {
+//     return this._a_;
+//   },
+
+//   // define a setter for `a`
+//   set a(val) {
+//     this._a_ = val * 2;
+//   },
+// };
+
+// console.log("myObject.a: ", myObject.a);
+
+// myObject.a = 2;
+// console.log("myObject.a: ", myObject.a);
+
+// ~~~~ END EXAMPLE 27 ~~~~
+
+/*******************
+ **** EXISTENCE ****
+ ******************/
+
+/*
+ * earlier we made an object with `{ a: undefined }`
+ * how is this different from if `a` didn't exist on the object?
+ */
+
+// ~~~~ BEGIN EXAMPLE 28 ~~~~
+
+// var myObject = {
+// 	a: 2
+// };
+
+// console.log('("a" in myObject): ', ("a" in myObject));
+// console.log('("b" in myObject): ', ("b" in myObject));
+
+// console.log('myObject.hasOwnProperty( "a" ): ', myObject.hasOwnProperty( "a" ));
+// console.log('myObject.hasOwnProperty( "b" ): ', myObject.hasOwnProperty( "b" ));
+
+// ~~~~ END EXAMPLE 28 ~~~~
+
+/*
+BONUS ROUND
+*/
+
+// `in` checks for a PROPERTY name, not a value
+
+// ~~~~ BEGIN BONUS EXAMPLE  ~~~~
+
+// const jakesObject = {
+//     foo: 'hello',
+//     bar: 'goodbye',
+// }
+
+// const jakesArray = ['hello', 'goodbye']
+
+// console.log('("foo" in jakesObject): ', ("foo" in jakesObject));
+// console.log('("hello" in jakesArray): ', ("hello" in jakesArray));
+// console.log('("1" in jakesArray): ', ("1" in jakesArray));
+
+// ~~~~ END BONUS EXAMPLE  ~~~~
+
+/**********************
+ **** ENUMBERATION ****
+ *********************/
+
+// ~~~~ BEGIN EXAMPLE 29 ~~~~
+
+var myObject = {};
+
+Object.defineProperty(
+  myObject,
+  "a",
+  // make `a` enumerable, as normal
+  { enumerable: true, value: 2 }
+);
+
+Object.defineProperty(
+  myObject,
+  "b",
+  // make `b` NON-enumerable
+  { enumerable: false, value: 3 }
+);
+
+myObject.b; // 3
+"b" in myObject; // true
+myObject.hasOwnProperty("b"); // true
+
+// WHAT WILL LOG??
+for (var k in myObject) {
+  console.log(k, myObject[k]);
+}
+
+// go thru these one by one
+console.log(
+  'myObject.propertyIsEnumerable("a"): ',
+  myObject.propertyIsEnumerable("a")
+);
+console.log(
+  'myObject.propertyIsEnumerable("b"): ',
+  myObject.propertyIsEnumerable("b")
+);
+console.log("Object.keys(myObject): ", Object.keys(myObject));
+console.log(
+  "Object.getOwnPropertyNames(myObject): ",
+  Object.getOwnPropertyNames(myObject)
+);
+
+// ~~~~ END EXAMPLE 29 ~~~~
+
+/*
+ * `propertyIsEnumerable`: does this property name exist directly on the object and is  `enumberable: true`?
+ * `Object.keys()` & `Object.getOwnPropertyNames()` inspect only the direct object specified
+ * currenlty no built-in way to get a list of all properties similar to what `in` does
+ */
